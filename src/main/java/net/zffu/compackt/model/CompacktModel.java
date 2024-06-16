@@ -11,13 +11,13 @@ public class CompacktModel {
     /**
      * The fields that are possibly in the conversion.
      */
-    private Object[] fields;
+    private int[] fields;
 
     /**
      * Constructs a model with the excepted field size.
      * @param exceptedFields
      */
     public CompacktModel(int exceptedFields) {
-        this.fields = new Object[exceptedFields];
+        this.fields = new int[exceptedFields];
     }
 }
