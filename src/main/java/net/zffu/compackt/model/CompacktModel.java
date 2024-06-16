@@ -1,4 +1,4 @@
-package net.zffu.compackt;
+package net.zffu.compackt.model;
 
 
 /**
