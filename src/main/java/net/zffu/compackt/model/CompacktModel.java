@@ -52,5 +52,13 @@ public class CompacktModel<T extends ICompacktCompactable<T>> {
     public String apply(T compactable) {
         Object[] objects = compactable.getObjectsFrom(compactable);
         if(objects.length != this.fields.length) throw new IllegalArgumentException("The objects given do not match the fields!");
+
+        String s = "";
+
+        for(int i = 0; i < fields.length; i++) {
+            s += i + "]" + objects[i].toString() + "}";
+        }
+
+        return s;
     }
 }
