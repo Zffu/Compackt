@@ -11,12 +11,4 @@ public enum CompacktFieldType {
     INT,
     FLOAT;
 
-    /**
-     * Gets the type's optional variant of its id.
-     * @return the optional id.
-     */
-    public int getOptionalVariant() {
-        return ordinal() + 3;
-    }
-
 }
