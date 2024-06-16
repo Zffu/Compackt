@@ -1,6 +1,7 @@
 package net.zffu.compackt.model;
 
 
+import net.zffu.compackt.compactable.ICompacktCompactable;
 import net.zffu.compackt.fields.CompacktFieldType;
 
 /**
@@ -8,7 +9,7 @@ import net.zffu.compackt.fields.CompacktFieldType;
  * @author Zffu
  * @since 1.0.0
  */
-public class CompacktModel {
+public class CompacktModel<T extends ICompacktCompactable<T>> {
 
     /**
      * The fields that are possibly in the conversion.
@@ -42,4 +43,14 @@ public class CompacktModel {
         this.fieldIndex++;
     }
 
+    /**
+     * Applies the objects to the model to generate the compacted string.
+     * Doesn't check for any types at all as it would take too much time.
+     * @param compactable
+     * @return
+     */
+    public String apply(T compactable) {
+        Object[] objects = compactable.getObjectsFrom(compactable);
+        if(objects.length != this.fields.length) throw new IllegalArgumentException("The objects given do not match the fields!");
+    }
 }
